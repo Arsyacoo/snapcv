@@ -98,7 +98,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] as const }}
             className="overflow-hidden border-t border-border bg-white/95 backdrop-blur-xl md:hidden"
           >
             <div className="mx-auto flex max-w-[1200px] flex-col gap-1 px-6 py-4">

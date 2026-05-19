@@ -158,7 +158,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] as const }}
                   className="group overflow-hidden rounded-lg border border-border bg-white transition-all duration-250 hover:-translate-y-1.5 hover:shadow-lg"
                 >
                   {/* Preview area */}
@@ -224,7 +224,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
-              transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] as const }}
             >
               <button
                 onClick={() => setModalItem(null)}

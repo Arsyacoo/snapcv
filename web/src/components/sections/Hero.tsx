@@ -14,7 +14,7 @@ import {
 /* ── Animation Variants ── */
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] as const } },
 };
 
 const stagger = {
@@ -136,7 +136,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] as const }}
         >
           {/* CV Card */}
           <div className="w-[360px] max-w-full -rotate-2 rounded-lg border border-border bg-white p-8 shadow-lg transition-transform duration-250 hover:rotate-0 hover:scale-[1.02]">
