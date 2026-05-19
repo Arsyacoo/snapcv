@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ============================================
+   SnapCV — Tailwind v4 Design System
+   Migrated from legacy style.css custom properties.
+   ============================================ */
+
+/* ---------- Theme Tokens ----------
+   In Tailwind v4, theme customization is done via @theme
+   inside the CSS file rather than tailwind.config.ts.
+   ---------------------------------- */
+@theme inline {
+  /* --- Color Palette (from legacy --primary, --accent, etc.) --- */
+  --color-primary:       #2E75B6;
+  --color-primary-dark:  #1A5490;
+  --color-primary-light: #EBF3FB;
+  --color-accent:        #F59E0B;
+  --color-accent-dark:   #B45309;
+  --color-accent-light:  #FEF3C7;
+
+  /* --- Neutrals (mapped from legacy text/surface tokens) --- */
+  --color-text-primary:   #0F172A;
+  --color-text-secondary: #475569;
+  --color-surface:        #FFFFFF;
+  --color-surface-alt:    #F8FAFC;
+  --color-border:         #E2E8F0;
+
+  /* --- Semantic status colors --- */
+  --color-success:       #15803D;
+  --color-success-light: #DCFCE7;
+  --color-danger:        #BE185D;
+  --color-danger-light:  #FCE7F3;
+
+  /* --- Shadows (legacy --shadow-sm/md/lg) --- */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.05), 0 10px 20px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12), 0 8px 16px rgba(15, 23, 42, 0.06);
+
+  /* --- Border Radius (legacy --radius-sm/md/lg/xl) --- */
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-xl:  28px;
+
+  /* --- Font Families (applied from next/font CSS variables) --- */
+  --font-sans:     var(--font-jakarta);
+  --font-heading:  var(--font-syne);
+
+  /* --- Transition timing --- */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Base Layer Overrides ---------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary);
+    background: var(--color-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), var(--font-sans), sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: white;
+  }
+}
+
+/* ---------- Custom Utility Classes ---------- */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+  }
+}
